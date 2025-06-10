@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "4f09c82d-03f1-4ea6-9889-26a5fd9aeb18",
+		"name": "Learning NodeJs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "43203222",
+		"_collection_link": "https://universal-escape-756771.postman.co/workspace/Soil-App~98a48fbb-f327-42a0-9bea-e534cdc0d589/collection/43203222-4f09c82d-03f1-4ea6-9889-26a5fd9aeb18?action=share&source=collection_link&creator=43203222"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"sarthak4@gmail.com\",\r\n    \"password\": \"sarthak@1234\",\r\n    \"role\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/v1/auth/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"sarthak4@gmail.com\",\r\n    \"password\": \"sarthak@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/v1/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "getJobs",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhcnRoYWs0QGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5NTUwNTM2LCJleHAiOjE3NDk1NTIzMzZ9.QsVuLmnV1DQh3NWlsr5eHj6BENuq2WNWQa3S4Tnuwqw",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:5000/v1/jobs/getjobs"
+			},
+			"response": []
+		},
+		{
+			"name": "addJob",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhcnRoYWs0QGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5NTUxMjYxLCJleHAiOjE3NDk1NTMwNjF9.y3Tic2NaRxLU0lFNLfcCqkovweyITmnyYx5iRg_844E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"jobtitle\": \"Software Engineer\",\r\n        \"jobdescription\": \"Full Stack Developer (Node.JS)\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/v1/jobs/addjobs"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteJobs",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:5000/v1/jobs/deletejobs/1"
+			},
+			"response": []
+		},
+		{
+			"name": "updateJobs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"2\",\r\n    \"jobtitle\": \"Software Engineer1\",\r\n    \"jobdescription\": \"Full Stack Developer\"\r\n}"
+				},
+				"url": "http://localhost:5000/v1/jobs/updatejobs"
+			},
+			"response": []
+		},
+		{
+			"name": "Apply",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getallapplication",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Update Status of Application",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhcnRoYWs1QGdtYWlsLmNvbSIsInJvbGUiOiJyZXF1aXRlciIsImlhdCI6MTc0OTU1MjkxNiwiZXhwIjoxNzQ5NTU0NzE2fQ.-u5QPR12i7fn-dmRlnD6OQCgUslYkxsDUWrgATX1CKs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"Approve\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/v1/applications/updateapplication/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Application",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhcnRoYWs1QGdtYWlsLmNvbSIsInJvbGUiOiJyZXF1aXRlciIsImlhdCI6MTc0OTU1MjkxNiwiZXhwIjoxNzQ5NTU0NzE2fQ.-u5QPR12i7fn-dmRlnD6OQCgUslYkxsDUWrgATX1CKs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"Approve\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/v1/applications/deleteapplication/1"
+			},
+			"response": []
+		}
+	]
+}
